@@ -1,0 +1,206 @@
+﻿
+@{
+    ViewBag.Title = "KSRecords_Pic";
+}
+<style>
+	body{background-color: #E4F2FE;}
+	html, body, .picCut, .pcMain{height: 100%;}
+</style>
+
+<div class="picCut">
+	<dl class="pcSide" id="xmlist">
+		<dt>考试项目</dt>
+	</dl>
+	<div class="pcMain">
+		<div class="bar">1/4 开始考试</div>
+		<div class="picLarge">
+			
+		</div>
+		<div class="scrollWrap">
+			<div class="mask"><ul class="clearfix" id="picList"></ul></div>
+			<a class="btn-left" href="javascript:void(0)"><span class="iconfont icon-icon_paging_left"></span></a>
+            <a class="btn-right" href="javascript:void(0)"><span class="iconfont icon-icon_paging_right"></span></a>
+		</div>
+	</div>
+</div>
+
+<script>
+	var TData = [
+		{"XMName":"开始考试", "Pics":[
+			{"Name":"img1.jpg", "Time":"15:00:02"}
+		]},
+		{"XMName":"倒车入库", "Pics":[
+			{"Name":"img2.jpg", "Time":"15:00:02"},
+			{"Name":"img3.jpg", "Time":"15:00:02"},
+			{"Name":"img4.jpg", "Time":"15:00:02"},
+			{"Name":"img5.jpg", "Time":"15:00:02"},
+			{"Name":"img6.jpg", "Time":"15:00:02"}
+		]},
+		{"XMName":"曲线行驶", "Pics":[
+			{"Name":"img4.jpg", "Time":"15:00:02"},
+			{"Name":"img5.jpg", "Time":"15:00:02"},
+			{"Name":"img6.jpg", "Time":"15:00:02"}
+		]},
+		{"XMName":"结束考试", "Pics":[
+			{"Name":"img2.jpg", "Time":"15:00:02"},
+			{"Name":"img4.jpg", "Time":"15:00:02"},
+			{"Name":"img5.jpg", "Time":"15:00:02"},
+			{"Name":"img6.jpg", "Time":"15:00:02"}
+		]}
+	]
+	
+	var _xm = "",
+		_pics = "",
+		liW = 0, //li的宽度
+		picsSum = 0; //li的总数量
+		
+	for(var i=0; i<TData.length; i++){
+		_xm += "<dd><span>" + (i+1) + "</span>" + TData[i].XMName + "</dd>";
+		for(var j=0; j<TData[i].Pics.length; j++){
+			_pics += "<li data-xmIdx='" + i + "' data-picIdx='" + j + "'>";
+			_pics += "<img src='/Content/images/temp/" + TData[i].Pics[j].Name + "' alt='' />";
+			_pics += "<span>" + TData[i].Pics[j].Time + "</span>";
+			_pics += "</li>";
+			picsSum++;
+		}
+	}
+	
+	liW = $('#picList li').width() + 6; //li的宽度
+	$('#xmlist').append(_xm);
+	$('#picList').append(_pics);
+	
+	$('.picLarge').html("<img src='/Content/images/temp/" + TData[0].Pics[0].Name + "' alt='' />");
+
+	
+	window.onload = function(){
+		imgscroll();
+	}
+	function imgscroll(){
+		var scrollImgWrap = $('.scrollWrap');
+		var imgsBox = $(scrollImgWrap).find('ul');
+		var btn_left = $(scrollImgWrap).find('.btn-left');
+		var btn_right = $(scrollImgWrap).find('.btn-right');
+		var imgLargeBox = $('.picLarge');
+		
+		//每次移动图片的数量，此数值可以更改，可以一次移动一张图片，也可以一次移动多张图片；
+		var img_moveNum = 3;
+		
+		//获取显示区域的宽度
+		var showarea = $(scrollImgWrap).find('.mask').width();
+		
+		//偏移量
+		var imgsBox_left = $(imgsBox).position().left;
+		
+		//获取每张图片的宽度
+		var img_width = $(imgsBox).find('li').width() + 6;
+		
+		//获取图片的数量
+		var img_num = $(imgsBox).find('li').length;
+		
+		//计算所有图片总的宽度
+		var imgs_width = img_width * img_num;
+		
+		//给包含所有图片的标签设置宽度
+		imgsBox.css({'width':imgs_width});
+		
+		//每次移动的距离；
+		var moveDistance = img_width * img_moveNum;
+		
+		//初始时只能左移
+		setBtnState();
+		
+		function setBtnState(){
+//			debugger;
+			imgsBox_left = $(imgsBox).position().left;
+			if(imgsBox_left == 0){
+				$(btn_left).find('span').removeClass('disable');
+				$(btn_right).find('span').addClass('disable');
+			}
+			if((imgs_width + imgsBox_left > showarea) && imgsBox_left < 0){
+				$(btn_left).find('span').removeClass('disable');
+				$(btn_right).find('span').removeClass('disable');
+			}
+			if(imgs_width + imgsBox_left == showarea){
+				$(btn_left).find('span').addClass('disable');
+				$(btn_right).find('span').removeClass('disable');
+			}
+		}
+		
+		//左移
+		$(btn_left).click(function(){
+			debugger;
+			var dis = imgs_width + imgsBox_left - showarea;
+			if(imgsBox_left <= 0){
+				if(dis >= moveDistance){
+					$(imgsBox).animate({left: imgsBox_left - moveDistance},'50');
+				}
+				else{
+					$(imgsBox).animate({left: showarea - imgs_width},'50');
+				}
+			}
+			setTimeout(function(){
+				setBtnState();
+			},200)
+		})
+		
+		
+		//右移
+		$(btn_right).click(function(){
+			var dis = imgs_width + imgsBox_left - showarea;
+			if(imgsBox_left < 0){
+				if(dis >= moveDistance){
+					$(imgsBox).animate({left: imgsBox_left + moveDistance},'50');
+				}
+				else{
+					$(imgsBox).animate({left: 0},'50');
+				}
+			}
+			setTimeout(function(){
+				setBtnState();
+			},200)
+		})
+		
+		//点击缩略图切换大图
+		$(imgsBox).find('li').click(function(){
+			$(this).addClass('on').siblings('li').removeClass('on');
+			var xmIdx = $(this).attr('data-xmIdx'), picIdx = $(this).attr('data-picIdx');
+			$(imgLargeBox).html("<img src='/Content/images/temp/" + TData[xmIdx].Pics[picIdx].Name + "' alt='' />");
+			
+			//选中左侧对应的项目名
+			$('#xmlist dd').eq(xmIdx).addClass('on').siblings('dd').removeClass('on');
+		})
+		
+		//点击左侧项目名时：选中并移动缩略图，切换大图
+//		$('#xmlist dd').click(function(){
+//			$(this).addClass('on').siblings('dd').removeClass('on');
+//			
+//			//切换大图
+//			var idx = $(this).index() - 1; //获取考试项目索引
+//			$(imgLargeBox).html("<img src='/Content/images/temp/" + TData[idx].Pics[0].Name + "' alt='' />");
+//			
+//			//选中缩略图
+//			var pIdx = 0;//获取考试截图索引
+//			for(var i=0; i<idx; i++){
+//				for(var j=0; j<TData[i].Pics.length; j++){
+//					pIdx++;
+//				}
+//			}
+//			$(imgsBox).find('li').eq(pIdx).addClass('on').siblings('li').removeClass('on');
+//			
+//			var tt = $(imgsBox).position().left + $(imgsBox).find('li').eq(pIdx).position().left;
+//			console.log("boxLeft: " + $(imgsBox).position().left);
+//			console.log("liLeft: " + $(imgsBox).find('li').eq(pIdx).position().left);
+//			console.log("boxLeft + liLeft: " + tt);
+//			if(tt < 0){
+//				$(imgsBox).animate(
+//					{left: imgsBox_left - tt},'slow'				   
+//				)
+//			}
+//			if(tt > showarea){
+//				$(imgsBox).animate(
+//					{left: imgsBox_left - tt},'slow'				   
+//				)
+//			}
+//		})
+	}
+</script>

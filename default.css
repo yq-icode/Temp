@@ -1,0 +1,1478 @@
+@import url("global.css");
+
+/* ********************************************************** *
+ * 用户管理
+ * ********************************************************** */
+/* 左侧管理部门
+ * ******************************* */
+.TreeGlbm {
+    float: left;
+    width: 170px;
+    padding: 0 10px 10px;
+    background-color: #F3F4F4;
+    border-radius: 5px;
+    color: #333;
+    overflow: hidden;
+}
+
+    .TreeGlbm h2 {
+        margin: 0 -10px 10px;
+        padding: 5px 10px;
+        background-color: #BCC8CE;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        font-size: 14px;
+    }
+
+.TreeNav {
+    position: relative;
+    margin-left: 10px;
+    line-height: 24px;
+    overflow: auto;
+}
+
+    .TreeNav:before {
+        display: inline-block;
+        content: '';
+        position: absolute;
+        top: 11px;
+        left: -13px;
+        bottom: 12px;
+        border-left: 1px solid #BCC8CE;
+    }
+
+    .TreeNav h5 {
+        position: relative;
+        margin: 0;
+        height: 24px;
+        font-weight: bold;
+        line-height: 24px;
+        font-size: 12px;
+    }
+
+        .TreeNav h5:before {
+            display: inline-block;
+            content: '';
+            position: absolute;
+            top: 11px;
+            left: -13px;
+            width: 13px;
+            height: 0;
+            border-top: 1px solid #BCC8CE;
+        }
+
+        .TreeNav h5 label {
+            display: inline-block;
+            padding: 0 5px;
+            cursor: pointer;
+            background-color: #F3F4F4;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+
+        .TreeNav h5 i + label {
+            margin: 0 0 0 14px;
+        }
+
+        .TreeNav h5 label.on {
+            background-color: #2593FC;
+            color: #fff;
+        }
+
+        .TreeNav h5 .iconfont {
+            position: absolute;
+            top: 5px;
+            display: inline-block;
+            width: 13px;
+            height: 13px;
+            background-color: #67767E;
+            border-radius: 13px;
+            font-size: 7px;
+            color: #fff;
+            cursor: pointer;
+            text-align: center;
+            line-height: 15px;
+            vertical-align: middle;
+        }
+
+    .TreeNav .collap {
+        position: relative;
+        padding-left: 20px;
+    }
+
+        .TreeNav .collap:before {
+            display: inline-block;
+            content: '';
+            position: absolute;
+            top: -6px;
+            left: 6px;
+            bottom: 12px;
+            border-left: 1px solid #BCC8CE;
+        }
+        /*后缀 :after的为遮挡超出部分的垂直线条*/
+        .TreeNav .collap.last:after {
+            display: inline-block;
+            content: '';
+            position: absolute;
+            top: -12px;
+            left: -14px;
+            bottom: 0;
+            border-left: 1px solid #F3F4F4;
+        }
+        
+/* 添加&编辑用户 
+ * ******************************* */
+.userEdit .zwqz {
+    margin: 20px 0 15px;
+    border-top: 1px solid #BCC8CE;
+    border-bottom: 1px solid #BCC8CE;
+    padding: 10px 0 20px;
+}
+
+    .userEdit .zwqz .layui-upload-wrap {
+        display: block;
+    }
+
+    .userEdit .zwqz .layui-upload-drag {
+        display: block;
+        position: relative;
+        width: 100%;
+        border: 0;
+        padding: 10px;
+        background-color: #EEF1FA;
+        background-repeat: no-repeat;
+    }
+
+.userEdit .picbox {
+    height: 100px;
+    line-height: 100px;
+    vertical-align: middle;
+    overflow: hidden;
+}
+
+.userEdit .zwqz .zhiWen {
+    width: 120px;
+}
+
+.userEdit .zwqz .qianMing {
+    width: 210px;
+}
+
+.userEdit .zwqz .layui-upload-drag span {
+    display: block;
+    margin-top: 10px;
+    width: 100%;
+    text-align: center;
+    color: #67767e;
+}
+/* -- userInfo -- */
+.userKC .userInfo, .userComputer .userInfo, .userAuth .userInfo {
+    margin: 10px 0;
+    color: #67767e;
+}
+
+.userKC .userInfo span, .userComputer .userInfo span, .userAuth .userInfo span {
+    margin-right: 15px;
+}
+/* 分配考场 
+ * ******************************* */
+/*.userKC .KCList dl{
+	display: table;
+	width: 100%;
+	margin: 10px 0;
+	border: 1px solid #B7E3FE;
+}
+.userKC .KCList dl dt{
+	display: table-cell;
+	width: 18px;
+	padding: 2px 8px;
+	text-align: center;
+	vertical-align: middle;
+}
+.userKC .KCList dl dt .layui-form-checkbox[lay-skin="primary"]{
+	padding: 25px 0 0 0;
+	text-align: center;
+}
+.userKC .KCList dl dt .layui-form-checkbox span{
+	padding-right: 0;
+	white-space: normal;
+	font-size: 12px;
+}
+.userKC .KCList dl dd{
+	display: table-cell;
+	border-left: 1px solid #B7E3FE;
+}
+.userKC .KCList dl dd .layui-col-xs3{
+	padding: 10px 10px;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+.userKC .KCList dl dd .layui-form-checkbox span{
+	max-width: 120px;
+	font-size: 12px;
+}*/
+/* 分配计算机
+ * ******************************* */
+.cmpLX {
+    padding: 2px 5px;
+    background-color: #67767E;
+    color: #fff;
+}
+
+    .cmpLX span {
+        margin-right: 20px;
+        font-size: 12px;
+    }
+
+        .cmpLX span .iconfont {
+            font-size: 14px;
+        }
+
+.ZDN3.CompList .layui-form-checkbox span {
+    max-width: 210px;
+}
+
+/* 分配权限
+ * ******************************* */
+.tpInfo {
+    margin: 10px 0;
+    color: #67767e;
+}
+
+.tpInfo span {
+    margin-right: 15px;
+}
+
+.sxbar {
+    padding: 0 10px;
+    background-color: #f3f3f3;
+    text-align: right;
+}
+
+.authTree .layui-layer-tips .layui-layer-content {
+    padding: 5px 0 7px 5px;
+}
+
+.authTree dl {
+    margin: 15px 0;
+}
+
+.authTree dl dt, .authTree dl dd {
+    line-height: 2.4;
+}
+
+.authTree dl dd {
+    margin-top: 5px;
+    border: 1px solid #BCC8CE;
+    padding: 5px 10px;
+}
+
+.authTree dl dd dt {
+    float: left;
+    width: 120px;
+}
+
+.authTree dl dd dd {
+    margin: 0 0 0 120px;
+    border: 0;
+    padding: 0;
+}
+
+.authTree dd > div {
+    position: relative;
+    display: inline-block;
+    margin-right: 15px;
+}
+
+.authTree > div {
+    position: relative;
+    clear: both;
+}
+
+.authTree .layui-form-checkbox span {
+    width: 90px;
+    padding-right: 0;
+    font-size: 12px;
+}
+/* 弹框部分 */
+.authTree .hbox {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 28px;
+    z-index: 100;
+    width: 280px;
+    border: 1px solid #eee;
+    padding: 8px 10px 10px;
+    background-color: #F3F3F3;
+}
+
+    .authTree .hbox .layui-form-checkbox span {
+        width: 60px;
+    }
+/* 用户详情
+ * ******************************* */
+.userDetail {
+    background-color: transparent;
+}
+
+    .userDetail .GWBox {
+        padding: 10px 0;
+    }
+
+    .userDetail .Bar {
+        padding: 0 10px;
+    }
+
+        .userDetail .Bar label {
+            display: block;
+            margin: 0 60px 0 0;
+            color: #011528;
+            font-weight: bold;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .userDetail .Bar .iconfont {
+            display: inline-block;
+            margin-right: 5px;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            border-radius: 30px;
+            line-height: 30px;
+            color: #fff;
+        }
+
+        .userDetail .Bar .layui-btn {
+            float: right;
+        }
+
+    .userDetail .Con {
+        margin: 10px 0 0;
+        border-top: 1px solid #BCC8CE;
+        padding: 10px 20px;
+    }
+
+    .userDetail .CollaTit .iconfont {
+        font-size: 14px;
+        color: #707E86;
+    }
+    /* -- 用户基本信息  -- */
+    .userDetail .dInfo .Bar .iconfont {
+        background-color: #2585C4;
+    }
+
+    .userDetail .dInfo .Con label {
+        padding-left: 10px;
+        color: #67767e;
+        font-size: 12px;
+    }
+
+    .userDetail .dInfo .Con span {
+        display: block;
+        margin-top: 5px;
+        height: 34px;
+        padding: 0 10px;
+        line-height: 34px;
+        border-radius: 5px;
+        background-color: #EEF1FA;
+        font-size: 14px;
+        color: #333;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+
+    .userDetail .dInfo .icon-jinggao {
+        margin-left: 3px;
+        font-size: 12px;
+        color: #F22635;
+    }
+
+    .userDetail .dInfo .layui-col-space30 > * {
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+
+    .userDetail .zwqz .item {
+        float: left;
+        margin-right: 20px;
+    }
+
+        .userDetail .zwqz .item p {
+            height: 140px;
+            line-height: 140px;
+            background-color: #EEF1FA;
+            text-align: center;
+            overflow: hidden;
+        }
+
+    .userDetail .zwqz .photo {
+        width: 100px;
+    }
+
+        .userDetail .zwqz .photo img {
+            max-width: 100px;
+        }
+
+    .userDetail .zwqz .zhiWen {
+        width: 120px;
+    }
+
+        .userDetail .zwqz .zhiWen img {
+            max-width: 120px;
+        }
+
+    .userDetail .zwqz .qianMing {
+        width: 210px;
+    }
+
+        .userDetail .zwqz .qianMing img {
+            max-width: 210px;
+        }
+
+    .userDetail .zwqz .zhengShu {
+        width: 210px;
+    }
+
+        .userDetail .zwqz .zhengShu img {
+            max-width: 210px;
+        }
+
+    /* -- 所属考场  -- */
+    .userDetail .dKc .Bar .iconfont {
+        background-color: #31C6C7;
+    }
+
+    .userDetail .dKc dl {
+        display: table;
+        width: 100%;
+        margin: 10px 0 0;
+        border: 1px solid #B7E3FE;
+    }
+
+        .userDetail .dKc dl dt {
+            display: table-cell;
+            width: 18px;
+            padding: 0 8px;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+            .userDetail .dKc dl dt .layui-form-checkbox[lay-skin="primary"] {
+                padding: 25px 0 0 0;
+                text-align: center;
+            }
+
+            .userDetail .dKc dl dt .layui-form-checkbox span {
+                padding-right: 0;
+                white-space: normal;
+                font-size: 12px;
+            }
+
+        .userDetail .dKc dl dd {
+            display: table-cell;
+            border-left: 1px solid #B7E3FE;
+        }
+
+            .userDetail .dKc dl dd .layui-col-xs4 {
+                padding: 0 10px;
+                line-height: 30px;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                overflow: hidden;
+            }
+
+            .userDetail .dKc dl dd .layui-form-checkbox span {
+                max-width: 130px;
+                font-size: 12px;
+            }
+    /* -- 可用计算机  -- */
+    .userDetail .dPc .Bar .iconfont {
+        background-color: #38B228;
+    }
+
+    .userDetail .dPc .Con dl {
+        display: table;
+        width: 100%;
+        margin: 10px 0 0;
+        border: 1px solid #B7E3FE;
+    }
+
+        .userDetail .dPc .Con dl dt {
+            width: 18px;
+            padding: 0 8px;
+            text-align: center;
+            display: table-cell;
+            vertical-align: middle;
+        }
+
+        .userDetail .dPc .Con dl dd {
+            display: table-cell;
+            border-left: 1px solid #B7E3FE;
+        }
+
+            .userDetail .dPc .Con dl dd .CollaTit {
+                margin-bottom: 1px;
+                height: 30px;
+                padding: 0 10px;
+                line-height: 30px;
+                background-color: #E2EFFF;
+                cursor: pointer;
+            }
+
+            .userDetail .dPc .Con dl dd .CollaBox {
+                font-size: 14px;
+            }
+
+                .userDetail .dPc .Con dl dd .CollaBox .layui-col-xs4 {
+                    padding: 5px 0 5px 20px;
+                }
+
+                .userDetail .dPc .Con dl dd .CollaBox span {
+                    display: inline-block;
+                    min-width: 85px;
+                    border-left: 1px solid #67767E;
+                    padding: 0 10px;
+                }
+
+                    .userDetail .dPc .Con dl dd .CollaBox span:first-child {
+                        min-width: 45px;
+                    }
+    /* -- 拥有的权限  -- */
+    .userDetail .dAuth .Bar .iconfont {
+        background-color: #F6AB60;
+    }
+
+    .userDetail .dAuth .Con dl dt {
+        margin-top: 1px;
+        padding: 6px 8px;
+        background-color: #E2EFFF;
+        cursor: pointer;
+    }
+
+    .userDetail .dAuth .Con dl dd {
+        padding: 10px;
+    }
+
+    .userDetail .dAuth .Con dl:last-child dd {
+        padding-bottom: 0;
+    }
+
+    .userDetail .dAuth .Con dl dd .layerN3Box {
+        margin-top: 5px;
+        border: 1px solid #BCC8CE;
+        padding: 10px;
+        line-height: 25px;
+    }
+
+    .userDetail .dAuth .layerN3Box + .layerN2 {
+        margin-top: 10px;
+    }
+
+    .userDetail .dAuth .Con dl dd .layerN3Box strong,
+    .userDetail .dAuth .Con dl dd .layerN3Box span {
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        vertical-align: middle;
+    }
+
+    .userDetail .dAuth .Con dl dd .layerN3Box strong {
+        margin-right: 30px;
+        display: inline-block;
+        width: 100px;
+        text-align: right;
+        font-size: 14px;
+    }
+
+    .userDetail .dAuth .Con dl dd .layerN3Box span {
+        display: inline-block;
+        min-width: 40px;
+    }
+    /* -- 用户详细信息  -- */
+    .userDetail .dOInfo {
+        font-size: 14px;
+    }
+.userDetail .dOInfo .Bar .iconfont {
+    background-color: #A96FF1;
+}
+
+.userDetail .dOInfo .layui-row {
+    margin-top: 10px;
+    border: 1px solid #BCC8CE;
+    padding: 15px;
+}
+.userDetail .dOInfo .layui-row div[class*='layui-col-'] {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.userDetail .dOInfo .layui-row.layui-col-space5 {
+    margin: 15px 0 0;
+}
+/* ********************************************************** *
+ * 角色管理
+ * ********************************************************** */
+/* -- 权限编辑  -- */
+.roleAdd .dAuth dl dt {
+    margin-top: 1px;
+    padding: 6px 8px;
+    background-color: #E2EFFF;
+    cursor: pointer;
+}
+.roleAdd .dAuth dl dd {
+    padding: 10px 0;
+}
+.roleAdd .dAuth dl + dl dd {
+    padding-bottom: 0;
+}
+.roleAdd .dAuth dt .iconfont {
+    font-size: 12px;
+}
+.roleAdd .dAuth dl dd .layerC1Box {
+    margin-top: 5px;
+    border: 1px solid #BCC8CE;
+    padding: 10px;
+    line-height: 25px;
+}
+.roleAdd .dAuth .layerC1Box + .layerC1 {
+    margin-top: 10px;
+}
+.roleAdd .dAuth dl dd .layerC1Box strong,
+.roleAdd .dAuth dl dd .layerC1Box span {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    vertical-align: middle;
+}
+.roleAdd .dAuth dl dd .layerC1Box strong {
+    margin-right: 30px;
+    display: inline-block;
+    width: 100px;
+}
+.roleAdd .dAuth dl dd .layerC2Item {
+    display: table;
+}
+.roleAdd .dAuth dl dd .layerC2Item .layerC2,
+.roleAdd .dAuth dl dd .layerC2Item .layerC2Box {
+    display: table-cell;
+}
+.roleAdd .dAuth dl dd .layerC2Item .layerC2 {
+    width: 120px;
+    font-weight: bold;
+}
+.roleAdd .dAuth .layui-form-checkbox span {
+    font-size: 12px;
+}
+/* ********************************************************** *
+ * 备案管理
+ * ********************************************************** */
+
+/* 考场备案－添加考场
+ * ******************************* */
+.ba_kc_add .layui-form-checkbox[lay-skin="primary"] {
+    margin: 5px 0;
+}
+.ba_kc_add .layui-table-body {
+    border-bottom: 0;
+}
+.ba_kc_add .layui-table-body tr.cur {
+    background-color: #DDF5D4;
+    color: #000;
+}
+.KZCX {
+    border: 1px solid #67767E;
+    background-color: #EEF1FA;
+}
+.KZCX .cxTit {
+    padding: 5px 10px;
+    background-color: #67767E;
+}
+.KZCX .cxTit span {
+    position: relative;
+    top: 4px;
+    color: #fff;
+    vertical-align: top;
+}
+.KZCX .cxTit > .layui-form {
+    display: inline-block;
+    width: 90px;
+}
+.KZCX .cxTit > .layui-form .layui-input {
+    height: 24px;
+    line-height: 24px;
+    border: 0;
+}
+.KZCX .item {
+    position: relative;
+    margin: 10px;
+    border: 1px solid #eee;
+    padding: 10px;
+    background-color: #fff;
+}
+.KZCX .item strong {
+    position: absolute;
+    left: 10px;
+    top: 18px;
+    font-size: 16px;
+}
+.KZCX .item .delRow {
+    position: absolute;
+    right: 15px;
+    top: 20px;
+    cursor: pointer;
+}
+.KZCX .item dl {
+    margin: 0 35px;
+    min-height: 40px;
+}
+.KZCX .item dt {
+    margin: 5px 0;
+    float: right;
+    width: 176px;
+    border: 1px solid #BCC8CE;
+}
+.KZCX .item dt input {
+    margin-right: 3px;
+    display: inline-block;
+    width: 140px;
+    height: 28px;
+    line-height: 28px;
+    border-radius: 0;
+    border: 0;
+}
+.KZCX .item dt .iconfont {
+    border-left: 1px solid #BCC8CE;
+    padding: 0 5px;
+    color: #2693FC;
+    cursor: pointer;
+}
+.KZCX .item dd {
+    margin: 5px;
+    display: inline-block;
+    padding: 2px 3px;
+    background-color: #DDEEFF;
+}
+.KZCX .item dd label {
+    margin-bottom: 0;
+}
+.KZCX .item dd input {
+    margin: 0 2px;
+    display: inline-block;
+    width: 90px;
+    height: 26px;
+    line-height: 26px;
+    border: 0;
+    border-radius: 0;
+}
+.KZCX .item dd .iconfont {
+    color: #73828B;
+    cursor: pointer;
+}
+
+
+/* 备案信息下载
+ * ******************************* */
+.baDown {
+    margin-top: 15px;
+    color: #67767e;
+}
+.baDown .item {
+    border: 1px solid #BCC8CE;
+    padding: 22px;
+}
+.baDown h3 {
+    margin-bottom: 25px;
+    font-size: 14px;
+    font-weight: bold;
+}
+.baDown dl {
+    display: table;
+    width: 100%;
+}
+.baDown dt, .baDown dd {
+    display: table-cell;
+    vertical-align: top;
+}
+.baDown dt {
+    width: 75px;
+}
+.baDown dd {
+    vertical-align: bottom;
+    text-align: right;
+}
+.baDown .iconfont {
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    color: #fff;
+    font-size: 22px;
+}
+.baDown .n0 .iconfont {
+    background-color: #3CC5D1;
+}
+.baDown .n1 .iconfont {
+    background-color: #8D48AB;
+}
+.baDown .n2 .iconfont {
+    background-color: #3B99D9;
+}
+.baDown .n3 .iconfont {
+    background-color: #3BA94C;
+}
+.baDown .n4 .iconfont {
+    background-color: #E5525D;
+}
+.baDown .n5 .iconfont {
+    background-color: #598FBC;
+}
+.baDown .num label {
+    display: block;
+    margin: 0;
+    font-weight: bold;
+}
+.baDown .num span {
+    font-size: 30px;
+    color: #333;
+    font-weight: bold;
+}
+.baDown .btnDown {
+    display: inline-block;
+    height: 24px;
+    padding: 0 20px;
+    line-height: 24px;
+    background-color: #67767E;
+    border-radius: 12px;
+    color: #fff;
+}
+.baDown .btnDown:hover {
+    background-color: #000;
+}
+.baDown .downOK, .baDown .downOK a {
+    color: #2593FC;
+    font-size: 14px;
+}
+.baDown .downOK a {
+    text-decoration: underline;
+}
+/* 参数模板下载
+ * ******************************* */
+.CSMBImport .layui-tab-item{
+	height: 232px;
+	padding: 20px;
+	position: relative;
+}
+.CSMBImport .layui-tab-item:first-child{
+	padding-left: 130px;
+}
+.CSMBImport .layui-tab-item:last-child{
+	padding: 30px 50px 0;
+}
+.CSMBImport .layui-tab-item:first-child li{
+	margin: 10px 0;
+}
+.CSMBImport .layui-tab-item button{
+	vertical-align: middle;
+}
+.CSMBImport h3{
+	margin-bottom: 15px;
+	font-size: 16px;
+	font-weight: bold;
+	color: #333;
+}
+.CSMBImport .layui-tab-item:first-child label{
+	font-size: 16px;
+	font-weight: normal;
+	vertical-align: middle;
+}
+.CSMBImport .fileName{
+	display: inline-block;
+	width: 165px;
+	height: 30px;
+	line-height: 30px;
+	border: 1px solid #BCC8CE;
+	padding: 0 10px;
+	background-color: #fff;
+	border-radius: 3px;
+	color: #999;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	vertical-align: middle;
+}
+.CSMBImport .DRIcon{
+	font-size: 70px;
+	color: #2593FC;
+}
+.CSMBImport .layui-tab-item:first-child .DRIcon{
+	position: absolute;
+	left: 40px;
+	top: 15px;
+}
+.CSMBImport .akc{
+	position: relative;
+	padding: 30px 0 0 95px;
+}
+.CSMBImport .akc .DRIcon{
+	position: absolute;
+	left: 0;
+	top: 30px;
+}
+.CSMBImport .akc span{
+	width: 250px;
+}
+.dashBox{
+	height: 330px;
+	border: 1px dashed #2593FC;
+	padding: 120px 30px 0;
+	background-color: #F8FDFF;
+	color: #67767e;
+}
+.xtcs .dashBox{ /*上传系统参数模板*/
+	height: 280px;
+	padding: 70px 50px 0;
+}
+/*导入进度条*/
+.dashBox .layui-progress{
+	margin: 40px auto 0;
+	width: 60%;
+}
+.dashBox h5{
+	font-size: 16px;
+	text-align: center;
+}
+/*导入模板成功后的文字提示*/
+.dashBox .success{
+	margin-top: 40px;
+	font-size: 20px;
+}
+/* 通用考场参数同步提示
+ * ******************************* */
+.tbHint{
+	position: absolute;
+	right: 0;
+	top: 37px;
+	max-width: 600px;
+	min-width: 300px;
+	max-height: 300px;
+	border-bottom: 4px solid #2593FC;
+	padding: 20px;
+	background-color: #fff;
+	font-size: 14px;
+	color: #666;
+	box-shadow: 0 0 10px 5px rgba(0,0,0,0.01);
+	overflow: auto;
+}
+.tbHint h5{
+	font-size: 18px;
+	color: #000;
+}
+.tbHint h5 + p{
+	margin-top: 15px;
+}
+.tbHint li{
+	margin-left: 1em;
+	list-style-type: disc;
+	list-style-position: outside;
+}
+
+/* ********************************************************** *
+ * 考试车管理
+ * ********************************************************** */
+/* 配置视频通道
+ * ******************************* */
+.KSCConfig .btnPlay {
+    left: 0;
+    right: auto;
+    margin-top: 33px;
+    margin-bottom: 5px;
+}
+.KSCConfig .btnPlay.on {
+    background-color: #FF6600;
+}
+.KSCConfig video {
+    width: 100%;
+}
+/* 考试车详情
+ * ******************************* */
+.KSCDetail .btnC2 {
+    margin-top: 26px;
+    min-width: auto;
+}
+.KSCDetail .btnC2:focus {
+    color: #2593FC;
+}
+.KSCDetail .btnC2:hover {
+    border-color: #FF6600;
+    color: #FF6600;
+}
+/* 视频预览
+ * ******************************* */
+.KSCVideo .layui-tab-title {
+    border-bottom: 0;
+    background-color: #333333;
+    color: #999;
+}
+.KSCVideo .layui-tab-title .layui-this::after {
+    border-bottom: 0;
+}
+.KSCVideo .layui-tab-title li {
+    font-size: 12px;
+}
+.KSCVideo .layui-tab-title .layui-this {
+    color: #fff;
+}
+.KSCVideo .layui-tab-content {
+    padding: 0;
+}
+.KSCVideo video {
+    width: 100%;
+}
+/* ********************************************************** *
+ * 接口管理
+ * ********************************************************** */
+
+/* 接口授权
+ * ******************************* */
+.ZDN3.jksq .layui-form-checkbox span {
+    max-width: 180px;
+}
+
+
+/* ********************************************************** *
+ * 考试管理
+ * ********************************************************** */
+
+/*  考生排考
+ * ************************ */
+.pktj dt, .pktj dd{
+	display: table-cell;
+	line-height: 26px;
+	font-weight: normal;
+	color: #67767e;
+}
+.pktj dd{
+	padding: 0 10px;
+	background-color: #F0F1F2;
+}
+.pktj dd + dt{
+	padding-left: 20px;
+}
+.pktj dd span + span{
+	margin-left: 20px;
+}
+/* 排考详情  */
+.KspkDetail .photo{
+	float: left;
+	width: 210px;
+	overflow: hidden;
+}
+.KspkDetail .photo img{
+	display: block;
+}
+.KspkDetail .photo span{
+	margin-top: 10px;
+	display: block;
+	padding: 6px;
+	background-color: #DDF5D4;
+	text-align: center;
+}
+.KspkDetail .bar{
+	padding: 5px 10px;
+	background-color: #67767E;
+	color: #fff;
+	font-size: 16px;
+	text-align: center;
+	line-height: 30px;
+}
+.KspkDetail button{
+	float: right;
+	background-color: #F3404B;
+	font-size: 14px;
+}
+/*水平时间线*/
+.timeLine li{
+	position: relative;
+	float: left;
+	width: 12.2%;
+}
+.timeLine li:before{
+	content: '';
+	position: absolute;
+	left: 11px;
+	top: 25px;
+	width: 100%;
+	height: 16px;
+	background-color: #CEDDE4;
+}
+.timeLine li.on:before{
+	background-color: #2593FC;
+}
+.timeLine li .dot{
+	position: absolute;
+	left: 0;
+	top: 22px;
+	display: block;
+	width: 22px;
+	height: 22px;
+	background-color: #C0CED5;
+	border: 2px solid #fff;
+	border-radius: 100px;
+}
+.timeLine li.on .dot{
+	background-color: #00B54A;
+	box-shadow: 0 0 2px 1px rgba(0,0,0,0.05);
+}
+.timeLine li .time, .timeLine li .title{
+	display: block;
+	margin-left: -39px;
+	width: 100px;
+	text-align: center;
+}
+.timeLine li .time{
+	height: 19px;
+	font-size: 14px;
+	color: #777;
+}
+.timeLine li .title{
+	margin-top: 35px;
+	font-size: 16px;
+	color: #333;
+}
+.timeLine li.last{
+	width: 22px;
+}
+.timeLine li:first-child .time, .timeLine li:first-child .title{
+	margin-left: 0;
+	text-align: left;
+}
+.timeLine li.last .time, .timeLine li.last .title{
+	position: absolute;
+	right: 0;
+	margin-left: 0;
+	text-align: right;
+}
+.timeLine li.last .title{
+	margin-top:54px;
+}
+.timeLine li.last:before{
+	display: none;
+}
+/*  视频认证
+ * ************************ */
+.videoCer .photo p{
+	width: 100px;
+	overflow: hidden;
+}
+.videoCer .photo span{
+	display: block;
+	padding: 5px 0;
+	background-color: #DDF5D4;
+	text-align: center;
+}
+.videoCer .gbar{
+	height: 40px;
+	padding: 5px 10px;
+	background-color: #67767E;
+	color: #fff;
+	line-height: 30px;
+}
+.videoCer .gbar span{
+	position: relative;
+	top: -5px;
+	display: inline-block;
+	height: 40px;
+	padding: 0 10px;
+	border-left: 1px solid #828F95;
+	line-height: 40px;
+}
+.videoCer .gbar span:first-child{
+	border-left: 0;
+	padding-left: 0;
+}
+.videoCer .gbar .iconfont{
+	float: right;
+	font-size: 30px;
+}
+.videoCer .gbar .iconfont.green{color: #0BA34C;}
+.videoCer .gbar .iconfont.red{color: #F3404B;font-size: 26px;}
+
+.videoCer .MJPic, .videoCer .Vid{
+	height: 378px;
+	background-color: #000000;
+	overflow: hidden;
+	color: #81868B;
+	font-size: 30px;
+	line-height: 360px;
+	text-align: center;
+}
+.videoCer .MJPic span, .videoCer .Vid span{
+	position: relative;
+	top: 40px;
+	display: inline-block;
+}
+.videoCer .MJPic span{
+	line-height: 3;
+}
+.videoCer .Vid span{
+	line-height: 1.4;
+}
+.videoCer .iconfont{color: #666;font-size: 90px;}
+
+/*  电子签名
+ * ***************************** */
+/*签名区标题*/
+.signArea{
+	position: relative;
+	height: 230px;
+	border: 1px dashed #2593FC;
+	background-color: #F8FDFF;
+	text-align: center;
+	font-size: 18px;
+	line-height: 230px;
+}
+.signArea label{
+	position: absolute;
+	left: -10px;
+	top: -15px;
+	display: inline-block;
+	height: 24px;
+	padding: 0 5px 0 10px;
+	background-color: #2593FC;
+	color: #fff;
+	font-size: 14px;
+	line-height: 24px;
+}
+.signArea label i{
+	display: inline-block;
+	position: absolute;
+	right: -24px;
+	top: 0;
+	width: 0;
+	height: 0;
+	border: 12px solid #2593FC;
+	border-color: #2593FC transparent transparent #2593FC;
+}
+/*选中的考生*/
+.ksSelect span{
+	margin-left: 5px;
+	display: inline-block;
+	padding: 2px 10px;
+	background-color: #E7E9EA;
+}
+/* 成绩单
+ * ************************* */
+.scoreReport h2{
+	margin: 20px 0;
+	font-size: 24px;
+	text-align: center;
+}
+.scoreReport h3{
+	margin: 30px 0 20px;
+	font-size: 20px;
+	text-align: center;
+}
+.scoreReport table{
+	border-collapse: collapse;
+	border-spacing: 0;
+	table-layout: fixed;
+}
+.scoreReport table th, .scoreReport table td{
+	border: 1px solid #eee;
+	padding: 10px;
+}
+.scoreReport .kouFen dt{
+	float: left;
+	font-weight: normal;
+}
+.scoreReport .kouFen dt span{
+	margin-left: 15px;
+}
+.scoreReport .kouFen dd{
+	margin-left: 120px;
+}
+.scoreReport .photo{
+	display: inline-block;
+	width: 100px;
+	height: 140px;
+	overflow: hidden;
+}
+
+/*  考试记录
+ * ************************ */
+/*考试明细*/
+.KSRDetail .userInfo{
+	float: left;
+	width: 205px;
+}
+.KSRDetail .userInfo .photo{
+	display: inline-block;
+}
+.KSRDetail .userInfo .photo p{
+	display: inline-block;
+	width: 100px;
+	overflow: hidden;
+}
+.KSRDetail .userInfo .photo span{
+	display: block;
+	padding: 5px 0;
+	background-color: #DDF5D4;
+	text-align: center;
+}
+.KSRDetail .SPass, .KSRDetail .SFail{
+	border: 2px solid #eee;
+	padding: 15px;
+}
+.KSRDetail .SFail{
+	border-color: #F3404B;
+}
+.KSRDetail .SPass{
+	border-color:#74C452;
+}
+/*视频回放*/
+.vidPlay .vidBox{
+	height: 300px;
+	background-color: #000000;
+	text-align: center;
+	
+}
+.vidPlay .vidBox p{
+	padding-top: 100px;
+	color: #81868B;
+	font-size: 22px;
+}
+.vidPlay .vidBox p .iconfont{
+	font-size: 60px;
+}
+/*考试截图*/
+.picCut .pcSide{
+	float: left;
+	width: 150px;
+	border-bottom: 1px solid #CDD9E4;
+}
+.picCut .pcSide dt, .picCut .pcSide dd{
+	border-top: 1px solid #CDD9E4;
+	border-bottom: 1px solid #F2F9FF;
+	padding: 10px 0 10px 15px;
+}
+.picCut .pcSide dt{
+	padding-top: 8px;
+	padding-bottom: 7px;
+	font-size: 14px;
+}
+.picCut .pcSide dd{
+	position: relative;
+	padding-left: 35px;
+	cursor: pointer;
+}
+.picCut .pcSide dd span{
+	position: absolute;
+	left: 15px;
+	top: 10px;
+}
+.picCut .pcSide dd.on, .picCut .pcSide dd:hover{
+	background-color: #2391F8;
+	color: #fff;
+}
+.picCut .pcMain{
+	position: relative;
+	margin-left: 150px;
+	background-color: #fff;
+}
+.picCut .bar{
+	padding: 9px 0;
+	background-color: #011528;
+	font-size: 14px;
+	color: #fff;
+	text-align: center;
+}
+.picCut .picLarge{
+	margin-bottom: 115px;
+	text-align: center;
+}
+.picCut .picLarge img{
+	margin: 20px;
+	max-width: 100%;
+	max-height: 100%;
+}
+.picCut .scrollWrap{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	padding: 5px;
+	background-color: #011528;
+}
+.picCut .scrollWrap .btn-left, .picCut .scrollWrap .btn-right{
+	position: absolute;
+	top: 40px;
+	cursor: pointer;
+}
+.picCut .scrollWrap .btn-left span,
+.picCut .scrollWrap .btn-right span{
+	font-size: 26px;
+	color: #99A1A9;
+}
+.picCut .scrollWrap .btn-left span.disable,
+.picCut .scrollWrap .btn-left:hover span.disable,
+.picCut .scrollWrap .btn-right span.disable,
+.picCut .scrollWrap .btn-right:hover span.disable{
+	color: #444;
+}
+.picCut .scrollWrap .btn-left:hover span,
+.picCut .scrollWrap .btn-right:hover span{
+	color: #ccc;
+}
+.picCut .scrollWrap .btn-left{
+	left: 15px;
+}
+.picCut .scrollWrap .btn-right{
+	right: 15px;
+}
+.picCut .scrollWrap .mask{
+	position: relative;
+	margin: 0 50px;
+	height: 105px;
+	overflow: hidden;
+}
+.picCut .scrollWrap .mask ul{
+	position: relative;
+}
+.picCut .scrollWrap li{
+	position: relative;
+	float: left;
+	margin: 0 3px;
+	width: 140px;
+	height: 105px;
+	overflow: hidden;
+	text-align: center;
+	cursor: pointer;
+}
+.picCut .scrollWrap li:hover{
+	border: 3px solid #F0F2F5;
+}
+.picCut .scrollWrap li.on{
+	border: 3px solid #2593FC;
+}
+
+.picCut .scrollWrap li img{
+	max-height: 100%;
+	max-width: 100%;
+}
+.picCut .scrollWrap li span{
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	display: block;
+	width: 100%;
+	height: 20px;
+	line-height: 20px;
+	background-color: rgba(0,0,0,.1);
+	color: #F3F3F3;
+}
